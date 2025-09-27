@@ -19,9 +19,19 @@ namespace _2312795_TTGuyen_Lab3
             InitializeComponent();
             qlSinhVien = new QLSinhVien("TXT");
         }
-        
 
-        
-       
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn Thoát chương trình không?", "Xác nhận Thoát",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+                Application.Exit();
+        }
     }
 }

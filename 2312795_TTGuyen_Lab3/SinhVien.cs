@@ -44,9 +44,9 @@ namespace _2312795_TTGuyen_Lab3
         }
         public string ToFileString()
         {
-            string gioiTinhStr = GioiTinh.ToString();
-            string monHocStr = string.Join(",", MonHoc ?? new List<string>()); 
-            return $"{MSSV}|{HovaTenLot}|{Ten}|{NgaySinh:dd/MM/yyyy}|{Lop}|{SoCMND}|{SoDT}|{DiaChi}|{gioiTinhStr}|{monHocStr}";
+            string gioiTinh  = GioiTinh.ToString();
+            string monHoc = string.Join(",", MonHoc ?? new List<string>()); 
+            return $"{MSSV}|{HovaTenLot}|{Ten}|{NgaySinh:dd/MM/yyyy}|{Lop}|{SoCMND}|{SoDT}|{DiaChi}|{gioiTinh}|{monHoc}";
         }
     }
    
