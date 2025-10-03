@@ -7,23 +7,23 @@ using System.IO;
 
 namespace _2312795_TTGuyen_Lab3
 {
-    public class QLSinhVien
+    public class StudentManager
     {
-        public List<SinhVien> DanhSachSinhVien { get; set; }
+        public List<Student> DanhSachSinhVien { get; set; }
         private readonly string filePath = "danhsachsinhvien.txt";
-        public QLSinhVien()
+        public StudentManager()
         {
-            DanhSachSinhVien = new List<SinhVien>();
+            DanhSachSinhVien = new List<Student>();
             LoadFromFile();
 
 
         }
 
-        public QLSinhVien(string sv)
+        public StudentManager(string sv)
         {
         }
 
-        public void ThemSinhVien(SinhVien sv)
+        public void ThemSinhVien(Student sv)
         {
             DanhSachSinhVien.Add(sv);
             SaveToFile();
@@ -43,20 +43,20 @@ namespace _2312795_TTGuyen_Lab3
             DanhSachSinhVien.RemoveAll(sv => dsMSSV.Contains(sv.MSSV));
             SaveToFile();
         }
-        public SinhVien TimSinhVien(string mssv)
+        public Student TimSinhVien(string mssv)
         {
             return DanhSachSinhVien.FirstOrDefault(sv => sv.MSSV == mssv);
         }
-        public List<SinhVien> TimKiemTheoTen(string ten)
+        public List<Student> TimKiemTheoTen(string ten)
         {
             return DanhSachSinhVien.Where(sv => sv.Ten.IndexOf(ten, StringComparison.OrdinalIgnoreCase) >= 0)
                 .ToList();
         }
-        public List<SinhVien> TimKiemTheoLop(string lop)
+        public List<Student> TimKiemTheoLop(string lop)
         {
             return DanhSachSinhVien.Where(sv => sv.Lop.Equals(lop, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-        public void CapNhatSinhVien(SinhVien svCapNhat)
+        public void CapNhatSinhVien(Student svCapNhat)
         {
             var sv = TimSinhVien(svCapNhat.MSSV);
             if (sv != null)
@@ -98,7 +98,7 @@ namespace _2312795_TTGuyen_Lab3
                         var diaChi = parts[7];
                         var gioiTinh = bool.Parse(parts[8]);
                         var monHoc = parts[9].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                        return new SinhVien(mssv, hoVaTenLot, ten, ngaySinh, lop, soCMND, soDT, diaChi, gioiTinh, monHoc);
+                        return new Student(mssv, hoVaTenLot, ten, ngaySinh, lop, soCMND, soDT, diaChi, gioiTinh, monHoc);
                     }
                     return null;
                 }).Where(sv => sv != null).ToList();

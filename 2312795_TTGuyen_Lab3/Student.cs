@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2312795_TTGuyen_Lab3
 {
-    public class SinhVien
+    public class Student
     {
         public string MSSV { get; set; }
         public string HovaTenLot { get; set; }
@@ -19,11 +19,11 @@ namespace _2312795_TTGuyen_Lab3
         public bool GioiTinh { get; set; }
         public List<string> MonHoc { get; set; }
 
-        public SinhVien()
+        public Student()
         {
 
         }
-        public SinhVien(string mssv, string hoVaTenLot, string ten, DateTime ngaySinh, string lop, string soCMND, string soDT, string diaChi, bool gioiTinh, List<string> monHoc)
+        public Student(string mssv, string hoVaTenLot, string ten, DateTime ngaySinh, string lop, string soCMND, string soDT, string diaChi, bool gioiTinh, List<string> monHoc)
         {
             MSSV = mssv;
             HovaTenLot = hoVaTenLot;

@@ -12,12 +12,12 @@ namespace _2312795_TTGuyen_Lab3
 {
     public partial class frmSinhvien : Form
     {
-        private QLSinhVien qlSinhVien;
+        private StudentManager qlSinhVien;
         private SinhVien sinhVienSelected; // Để cập nhật
         public frmSinhvien()
         {
             InitializeComponent();
-            qlSinhVien = new QLSinhVien("TXT");
+            qlSinhVien = new StudentManager("TXT");
         }
 
         private void btnTim_Click(object sender, EventArgs e)
